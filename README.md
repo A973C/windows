@@ -8,6 +8,16 @@
 
 Include the latest jQuery and `assets/js/jquery.windows.js` in your HTML page.
 
+#### html
+
+```html
+<section class="window"></section>
+<section class="window"></section>
+<section class="window"></section>
+<section class="window"></section>
+<section class="window"></section>
+```
+
 #### js
 
 ```javascript
@@ -29,6 +39,24 @@ $(document).ready(function(){
     })
 
 });
+```
+
+#### scss
+
+```scss
+.window{
+    width:100%;
+    height:100%;
+    position:absolute;
+}
+
+@for $i from 1 through 6{
+    .window:nth-child(#{$i}){
+        background:nth($colors, $i);
+        top:($i - 1) * 100%;
+    }
+}
+
 ```
 
 ## In the Wild
